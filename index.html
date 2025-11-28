@@ -1,120 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bilal's AI Portfolio & Tools Hub</title>
-<!-- Google Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-    /* General Styles */
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        scroll-behavior: smooth;
-        background: #f4f4f9;
-        color: #333;
-    }
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-    header {
-        background: #4CAF50;
-        color: white;
-        padding: 30px 20px;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-    header h1 { margin: 0; }
-    nav {
-        margin-top: 15px;
-    }
-    nav a {
-        margin: 0 15px;
-        font-weight: bold;
-        color: white;
-        transition: color 0.2s;
-    }
-    nav a:hover { color: #ffd700; }
-
-    section {
-        padding: 60px 20px;
-        max-width: 1100px;
-        margin: auto;
-    }
-    h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 32px;
-    }
-
-    /* Skill & Tool Cards */
-    .skills, .tools-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
-    .skill-card, .tool-card {
-        width: 270px;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        padding: 25px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        text-align: center;
-    }
-    .skill-card:hover, .tool-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    }
-    .skill-card i, .tool-card i {
-        font-size: 40px;
-        margin-bottom: 15px;
-        color: #4CAF50;
-    }
-    .skill-card h3, .tool-card h2 {
-        margin: 10px 0;
-    }
-    .skill-card p, .tool-card p {
-        font-size: 14px;
-        color: #555;
-    }
-    .tool-card a {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        border-radius: 5px;
-        background: #4CAF50;
-        color: white;
-        font-weight: bold;
-        transition: background 0.3s;
-    }
-    .tool-card a:hover {
-        background: #45a049;
-    }
-
-    /* Footer */
-    footer {
-        background: #333;
-        color: white;
-        text-align: center;
-        padding: 25px;
-        margin-top: 50px;
-    }
-
-    /* Responsive */
-    @media (max-width: 800px) {
-        .skills, .tools-container { flex-direction: column; align-items: center; }
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilal's AI Portfolio & Tools Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+            background: #f4f4f9;
+            color: #333;
+        }
+        a { text-decoration: none; color: inherit; }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav { margin-top: 15px; }
+        nav a {
+            margin: 0 15px;
+            font-weight: bold;
+            color: white;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #ffd700; }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        .skills, .tools-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .skill-card, .tool-card {
+            width: 270px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .skill-card:hover, .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+        .skill-card i, .tool-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        .tool-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .tool-card a:hover { background: #45a049; }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+        @media (max-width: 1100px) {
+            .skills, .tools-container { flex-direction: column; align-items: center; }
+        }
+    </style>
 </head>
 <body>
-
 <header>
     <h1>Bilal's AI Portfolio & Tools Hub</h1>
     <nav>
@@ -122,85 +97,104 @@
         <a href="#tools">AI Tools</a>
     </nav>
 </header>
-
-<!-- Skills Section -->
 <section id="skills">
     <h2>My Skills & Expertise</h2>
     <div class="skills">
         <div class="skill-card">
             <i class="fas fa-robot"></i>
             <h3>AI Tool Development</h3>
-            <p>Creating AI-powered applications using Streamlit for tasks like summarization, chatbots, and text-to-speech.</p>
+            <p>Creating AI-powered applications using Streamlit.</p>
         </div>
         <div class="skill-card">
             <i class="fas fa-plug"></i>
             <h3>API Integration</h3>
-            <p>Integrating AI models and APIs to enhance app capabilities and make them more interactive.</p>
+            <p>Integrating AI models and APIs to make apps powerful.</p>
         </div>
         <div class="skill-card">
             <i class="fas fa-code"></i>
             <h3>Python & ML</h3>
-            <p>Skilled in Python programming and applying machine learning models to real-world problem solving.</p>
+            <p>Skilled in Python and machine learning techniques.</p>
         </div>
         <div class="skill-card">
             <i class="fas fa-desktop"></i>
             <h3>UI/UX Design</h3>
-            <p>Designing responsive and user-friendly interfaces in Streamlit for seamless user experience.</p>
+            <p>Designing responsive and user-friendly Streamlit interfaces.</p>
         </div>
     </div>
 </section>
-
-<!-- AI Tools Section -->
 <section id="tools">
     <h2>My AI Tools</h2>
     <div class="tools-container">
         <div class="tool-card">
+            <i class="fas fa-toolbox"></i>
+            <h2>AI Tool Suite <span style="color:#FFD700;">(Bestest!)</span></h2>
+            <p>The ultimate suite of AI-powered tools.</p>
+            <a href="https://ai-tool-suite.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+        <div class="tool-card">
+            <i class="fas fa-image"></i>
+            <h2>AI Meme Maker</h2>
+            <p>Create funny and viral memes instantly.</p>
+            <a href="https://ai-meme-maker.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+        <div class="tool-card">
+            <i class="fas fa-newspaper"></i>
+            <h2>News Article Categorizer</h2>
+            <p>Categorize news into topics automatically.</p>
+            <a href="https://news-article-categorizer-tool.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+        <div class="tool-card">
+            <i class="fas fa-pencil-ruler"></i>
+            <h2>Logo Generator Tool</h2>
+            <p>Design professional logos instantly using AI.</p>
+            <a href="https://logo-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+        <div class="tool-card">
             <i class="fas fa-file-alt"></i>
             <h2>AI Text Summarizer</h2>
-            <p>Automatically condense long articles or documents into concise summaries while keeping key ideas intact.</p>
+            <p>Condense long text into short summaries.</p>
             <a href="https://ai-text-summarizer-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-
-        <div class="tool-card">
-            <i class="fas fa-search"></i>
-            <h2>Named Entity Recognition</h2>
-            <p>Identify names, dates, locations, and organizations from text for easy data extraction.</p>
-            <a href="https://named-entity-recognition-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
         <div class="tool-card">
             <i class="fas fa-comments"></i>
             <h2>AI Interview Simulator</h2>
-            <p>Practice job interviews with an AI that asks questions, evaluates answers, and provides feedback.</p>
+            <p>Practice job interviews with AI.</p>
             <a href="https://ai-interview-simulator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-
         <div class="tool-card">
             <i class="fas fa-volume-up"></i>
             <h2>Text to Speech</h2>
-            <p>Convert text into natural-sounding speech for presentations, learning, or accessibility purposes.</p>
+            <p>Convert text into natural speech.</p>
             <a href="https://text-to-speech-app-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-
         <div class="tool-card">
             <i class="fas fa-robot"></i>
             <h2>AI Chatbot</h2>
-            <p>Interact with an AI chatbot that answers questions and holds human-like conversations on multiple topics.</p>
+            <p>Chat with an intelligent AI bot.</p>
             <a href="https://online-ai-chatbot-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-
         <div class="tool-card">
             <i class="fas fa-pen-nib"></i>
             <h2>AI Blog Generator</h2>
-            <p>Generate high-quality blog posts on any topic instantly using AI.</p>
+            <p>Generate high-quality blogs instantly.</p>
             <a href="https://ai-blog-generator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+        <div class="tool-card">
+            <i class="fas fa-search"></i>
+            <h2>Named Entity Recognition</h2>
+            <p>Extract names, dates, and locations from text.</p>
+            <a href="https://named-entity-recognition-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+        <div class="tool-card">
+            <i class="fas fa-video"></i>
+            <h2>YouTube Script Generator</h2>
+            <p>Create full YouTube video scripts instantly using AI.</p>
+            <a href="https://youtube-script-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
         </div>
     </div>
 </section>
-
 <footer>
     &copy; 2025 Bilal. All rights reserved.
 </footer>
-
 </body>
 </html>
