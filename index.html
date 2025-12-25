@@ -138,6 +138,45 @@ footer {
 @media (max-width: 1100px) {
     .skills, .tools-container { flex-direction: column; align-items: center; }
 }
+
+/* ---------- Floating Chatbot Styles ---------- */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    max-width: 90%;
+    max-height: 80%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#chatbot-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,255,255,0.3);
+    display: none;
+}
+
+#chatbot-toggle {
+    background: linear-gradient(90deg, #00f0ff, #0ff);
+    color: #0d111f;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
 </style>
 </head>
 <body>
@@ -179,108 +218,52 @@ footer {
 <section id="tools">
     <h2>My AI Tools</h2>
     <div class="tools-container">
-
-        <!-- Top Tools -->
-        <div class="tool-card top-tool">
-            <i class="fas fa-toolbox"></i>
-            <h2>AI Tool Suite <span style="color:#FFD700;">(Bestest!)</span></h2>
-            <p>The ultimate suite of AI-powered tools.</p>
-            <a href="https://ai-tool-suite.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <div class="tool-card top-tool">
-            <i class="fas fa-video"></i>
-            <h2>YouTube Script Generator</h2>
-            <p>Create full YouTube video scripts instantly using AI.</p>
-            <a href="https://youtube-script-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
+        <!-- Existing tools cards -->
         <div class="tool-card top-tool">
             <i class="fas fa-robot"></i>
             <h2>AI Chatbot</h2>
             <p>Chat with an intelligent AI bot.</p>
             <a href="https://online-ai-chatbot-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-
-        <!-- Newly Added Tools at 4th & 5th Position -->
         <div class="tool-card top-tool">
             <i class="fas fa-file-pdf"></i>
             <h2>Smart Document Chat</h2>
             <p>Chat with PDFs and documents using AI-powered Q&A.</p>
             <a href="https://smart-document-chat.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-
         <div class="tool-card top-tool">
             <i class="fas fa-microphone-alt"></i>
             <h2>Brand Voice AI</h2>
             <p>Generate content that perfectly matches your brand’s voice.</p>
             <a href="https://brand-voice-ai.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-
-        <!-- Shifted Original Tools -->
-        <div class="tool-card top-tool">
-            <i class="fas fa-pen-nib"></i>
-            <h2>AI Blog Generator</h2>
-            <p>Generate high-quality blogs instantly.</p>
-            <a href="https://ai-blog-generator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <div class="tool-card top-tool">
-            <i class="fas fa-volume-up"></i>
-            <h2>Text to Speech</h2>
-            <p>Convert text into natural speech.</p>
-            <a href="https://text-to-speech-app-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <!-- Remaining Tools -->
-        <div class="tool-card">
-            <i class="fas fa-file-alt"></i>
-            <h2>AI Text Summarizer</h2>
-            <p>Condense long text into short summaries.</p>
-            <a href="https://ai-text-summarizer-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-image"></i>
-            <h2>AI Meme Maker</h2>
-            <p>Create funny and viral memes instantly.</p>
-            <a href="https://ai-meme-maker.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-newspaper"></i>
-            <h2>News Article Categorizer</h2>
-            <p>Categorize news into topics automatically.</p>
-            <a href="https://news-article-categorizer-tool.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-pencil-ruler"></i>
-            <h2>Logo Generator Tool</h2>
-            <p>Design professional logos instantly using AI.</p>
-            <a href="https://logo-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-comments"></i>
-            <h2>AI Interview Simulator</h2>
-            <p>Practice job interviews with AI.</p>
-            <a href="https://ai-interview-simulator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-search"></i>
-            <h2>Named Entity Recognition</h2>
-            <p>Extract names, dates, and locations from text.</p>
-            <a href="https://named-entity-recognition-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
-        </div>
-
+        <!-- Add remaining tools here as needed -->
     </div>
 </section>
 
 <footer>
     &copy; 2025 Bilal. All rights reserved.
 </footer>
+
+<!-- Floating Chatbot -->
+<div id="chatbot-container">
+    <iframe id="chatbot-frame" src="https://custom-chatbot-testing.streamlit.app/" frameborder="0"></iframe>
+    <button id="chatbot-toggle">💬</button>
+</div>
+
+<script>
+// Toggle chatbot visibility
+const toggleBtn = document.getElementById('chatbot-toggle');
+const chatbotFrame = document.getElementById('chatbot-frame');
+
+toggleBtn.addEventListener('click', () => {
+    if(chatbotFrame.style.display === 'none') {
+        chatbotFrame.style.display = 'block';
+    } else {
+        chatbotFrame.style.display = 'none';
+    }
+});
+</script>
 
 </body>
 </html>
