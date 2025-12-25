@@ -139,27 +139,12 @@ footer {
     .skills, .tools-container { flex-direction: column; align-items: center; }
 }
 
-/* ---------- Floating Chatbot Styles ---------- */
+/* ---------- Floating Chatbot Button ---------- */
 #chatbot-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 350px;
-    height: 500px;
-    max-width: 90%;
-    max-height: 80%;
     z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-#chatbot-frame {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,255,255,0.3);
-    display: none;
 }
 
 #chatbot-toggle {
@@ -175,7 +160,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+#chatbot-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 25px rgba(0,255,255,0.6);
 }
 </style>
 </head>
@@ -218,7 +207,7 @@ footer {
 <section id="tools">
     <h2>My AI Tools</h2>
     <div class="tools-container">
-        <!-- All original tools kept -->
+        <!-- All your original 15+ tools -->
         <div class="tool-card top-tool">
             <i class="fas fa-toolbox"></i>
             <h2>AI Tool Suite <span style="color:#FFD700;">(Bestest!)</span></h2>
@@ -304,23 +293,20 @@ footer {
     &copy; 2025 Bilal. All rights reserved.
 </footer>
 
-<!-- Floating Chatbot -->
+<!-- Floating Chatbot Button -->
 <div id="chatbot-container">
-    <iframe id="chatbot-frame" src="https://custom-chatbot-testing.streamlit.app/" frameborder="0"></iframe>
     <button id="chatbot-toggle">💬</button>
 </div>
 
 <script>
-// Toggle chatbot visibility
+// Open chatbot in a popup window
 const toggleBtn = document.getElementById('chatbot-toggle');
-const chatbotFrame = document.getElementById('chatbot-frame');
-
 toggleBtn.addEventListener('click', () => {
-    if(chatbotFrame.style.display === 'none') {
-        chatbotFrame.style.display = 'block';
-    } else {
-        chatbotFrame.style.display = 'none';
-    }
+    window.open(
+        'https://custom-chatbot-testing.streamlit.app/', // your Streamlit chatbot URL
+        'AI Chatbot',
+        'width=400,height=600,top=100,left=100,resizable=yes,scrollbars=yes'
+    );
 });
 </script>
 
