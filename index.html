@@ -12,8 +12,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     scroll-behavior: smooth;
-    background: #0d111f;
-    color: #c0f0ff;
+    background: #0d111f; 
+    color: #c0f0ff; 
 }
 a { text-decoration: none; color: inherit; }
 
@@ -135,23 +135,44 @@ footer {
 }
 
 /* ---------- Floating Chat Button ---------- */
-#chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
-#chatbot-toggle {
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+#chatbot-bubble {
     background: linear-gradient(90deg, #00f0ff, #0ff);
     color: #0d111f;
-    font-size: 24px;
-    border: none;
+    font-size: 28px;
     border-radius: 50%;
     width: 60px;
     height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0,255,255,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-#chatbot-toggle:hover { transform: scale(1.1); box-shadow: 0 4px 25px rgba(0,255,255,0.6); }
+#chatbot-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 25px rgba(0,255,255,0.6);
+}
+
+/* Chat overlay */
+#chat-overlay {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 400px;
+    height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 25px rgba(0,255,255,0.6);
+    overflow: hidden;
+    z-index: 9998;
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
@@ -172,14 +193,125 @@ footer {
 <section id="skills">
     <h2>My Skills & Expertise</h2>
     <div class="skills">
-        <!-- Your skill cards here -->
+        <div class="skill-card">
+            <i class="fas fa-robot"></i>
+            <h3>AI Tool Development</h3>
+            <p>Creating AI-powered applications using Streamlit.</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-plug"></i>
+            <h3>API Integration</h3>
+            <p>Integrating AI models and APIs to make apps powerful.</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-code"></i>
+            <h3>Python & ML</h3>
+            <p>Skilled in Python and machine learning techniques.</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-desktop"></i>
+            <h3>UI/UX Design</h3>
+            <p>Designing responsive and user-friendly Streamlit interfaces.</p>
+        </div>
     </div>
 </section>
 
 <section id="tools">
     <h2>My AI Tools</h2>
     <div class="tools-container">
-        <!-- Your tool cards here -->
+
+        <!-- 15 Tools -->
+        <div class="tool-card top-tool">
+            <i class="fas fa-toolbox"></i>
+            <h2>AI Tool Suite <span style="color:#FFD700;">(Bestest!)</span></h2>
+            <p>The ultimate suite of AI-powered tools.</p>
+            <a href="https://ai-tool-suite.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-video"></i>
+            <h2>YouTube Script Generator</h2>
+            <p>Create full YouTube video scripts instantly using AI.</p>
+            <a href="https://youtube-script-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-robot"></i>
+            <h2>AI Chatbot</h2>
+            <p>Chat with an intelligent AI bot.</p>
+            <a href="https://online-ai-chatbot-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-file-pdf"></i>
+            <h2>Smart Document Chat</h2>
+            <p>Chat with PDFs and documents using AI-powered Q&A.</p>
+            <a href="https://smart-document-chat.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-microphone-alt"></i>
+            <h2>Brand Voice AI</h2>
+            <p>Generate content that perfectly matches your brand’s voice.</p>
+            <a href="https://brand-voice-ai.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-pen-nib"></i>
+            <h2>AI Blog Generator</h2>
+            <p>Generate high-quality blogs instantly.</p>
+            <a href="https://ai-blog-generator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-volume-up"></i>
+            <h2>Text to Speech</h2>
+            <p>Convert text into natural speech.</p>
+            <a href="https://text-to-speech-app-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-file-alt"></i>
+            <h2>AI Text Summarizer</h2>
+            <p>Condense long text into short summaries.</p>
+            <a href="https://ai-text-summarizer-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-image"></i>
+            <h2>AI Meme Maker</h2>
+            <p>Create funny and viral memes instantly.</p>
+            <a href="https://ai-meme-maker.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-newspaper"></i>
+            <h2>News Article Categorizer</h2>
+            <p>Categorize news into topics automatically.</p>
+            <a href="https://news-article-categorizer-tool.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-pencil-ruler"></i>
+            <h2>Logo Generator Tool</h2>
+            <p>Design professional logos instantly using AI.</p>
+            <a href="https://logo-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-comments"></i>
+            <h2>AI Interview Simulator</h2>
+            <p>Practice job interviews with AI.</p>
+            <a href="https://ai-interview-simulator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-search"></i>
+            <h2>Named Entity Recognition</h2>
+            <p>Extract names, dates, and locations from text.</p>
+            <a href="https://named-entity-recognition-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
     </div>
 </section>
 
@@ -187,19 +319,26 @@ footer {
     &copy; 2025 Bilal. All rights reserved.
 </footer>
 
-<!-- Floating Chatbot Button -->
+<!-- ====== Floating Chatbot Bubble ====== -->
 <div id="chatbot-container">
-    <button id="chatbot-toggle">💬</button>
+    <div id="chatbot-bubble">💬</div>
+</div>
+
+<div id="chat-overlay">
+    <iframe id="chat-frame" src="https://custom-chatbot-testing.streamlit.app/" 
+            width="100%" height="100%" frameborder="0"></iframe>
 </div>
 
 <script>
-const toggleBtn = document.getElementById('chatbot-toggle');
-toggleBtn.addEventListener('click', () => {
-    window.open(
-        'https://custom-chatbot-testing.streamlit.app/', // <-- replace with your deployed Streamlit app URL
-        'AI Chatbot',
-        'width=400,height=600,top=100,left=100,resizable=yes,scrollbars=yes'
-    );
+const bubble = document.getElementById('chatbot-bubble');
+const overlay = document.getElementById('chat-overlay');
+
+bubble.addEventListener('click', () => {
+    if (overlay.style.display === "none" || overlay.style.display === "") {
+        overlay.style.display = "block";
+    } else {
+        overlay.style.display = "none";
+    }
 });
 </script>
 
