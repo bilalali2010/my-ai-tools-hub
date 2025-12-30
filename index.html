@@ -3,312 +3,338 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NextGen Coaching Institute</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
+<title>Bilal's AI Portfolio & Tools Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* ===== GENERAL STYLES ===== */
+/* ---------- Global Styles ---------- */
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f4f7fb;
-    color: #333;
+    scroll-behavior: smooth;
+    background: #0d111f;
+    color: #c0f0ff;
 }
+a { text-decoration: none; color: inherit; }
 
+/* ---------- Header ---------- */
+header {
+    background: linear-gradient(90deg, #001733, #0d111f);
+    color: #00f0ff;
+    padding: 25px 40px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,255,255,0.2);
+}
+header h1 {
+    font-size: 32px;
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff77;
+}
+nav {
+    margin-top: 15px;
+}
+nav a {
+    margin: 0 15px;
+    font-weight: bold;
+    color: #c0f0ff;
+    transition: color 0.3s;
+}
+nav a:hover { color: #00f0ff; }
+
+/* ---------- Section Styles ---------- */
 section {
-    padding: 70px 20px;
-    max-width: 1100px;
+    padding: 60px 20px;
+    max-width: 1200px;
     margin: auto;
 }
 
+/* ---------- Headings ---------- */
 h2 {
     text-align: center;
-    color: #00bfff;
     margin-bottom: 40px;
+    font-size: 32px;
+    color: #00f0ff;
+    text-shadow: 0 0 8px #00f0ff44;
 }
 
-/* ===== HERO ===== */
-.hero {
-    background: linear-gradient(rgba(0,191,255,0.85), rgba(0,191,255,0.85)),
-                url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover no-repeat;
-    padding: 100px 20px;
-    text-align: center;
-    color: #fff;
-}
-
-.hero h1 {
-    font-size: 44px;
-}
-
-.hero p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 18px;
-}
-
-/* ===== INFO GRID & CARDS ===== */
-.cards, .info-grid, .stat-grid {
+/* ---------- Cards Containers ---------- */
+.skills, .tools-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
 }
 
-.card, .info, .stat {
-    background: #fff;
-    border-radius: 22px;
-    padding: 30px;
-    width: 300px;
+/* ---------- Skill & Tool Cards ---------- */
+.skill-card, .tool-card {
+    width: 270px;
+    background: rgba(0,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
     text-align: center;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(0,255,255,0.1);
+}
+.skill-card:hover, .tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
 }
 
-.card:hover { transform: translateY(-8px); }
-
-.card i {
-    font-size: 42px;
-    color: #00bfff;
+/* ---------- Icons ---------- */
+.skill-card i, .tool-card i {
+    font-size: 40px;
     margin-bottom: 15px;
+    color: #00f0ff;
+}
+.top-tool i { color: #ffd700; }
+
+/* ---------- Card Headings & Text ---------- */
+.tool-card h2, .skill-card h3 {
+    color: #00f0ff;
+}
+.tool-card h2 { font-size: 22px; margin-bottom: 10px; }
+.skill-card h3 { font-size: 20px; margin-bottom: 10px; }
+.skill-card p, .tool-card p {
+    color: #c0f0ff;
+    font-size: 15px;
 }
 
-.card h3, .info h3 {
-    color: #00bfff;
+/* ---------- Card Buttons ---------- */
+.tool-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #00f0ff, #0ff);
+    color: #0d111f;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.tool-card a:hover {
+    background: linear-gradient(90deg, #0ff, #00f0ff);
+    box-shadow: 0 0 15px #00f0ff77, 0 0 25px #0ff44;
 }
 
-.info {
-    width: 320px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
-}
-
-.stat {
-    text-align: center;
-    background: none;
-    color: #fff;
-}
-
-.stat h1 {
-    font-size: 42px;
-    margin-bottom: 5px;
-}
-
-/* ===== STATS SECTION ===== */
-.stats {
-    background: linear-gradient(135deg, #00bfff, #009acd);
-    color: #fff;
-    border-radius: 30px;
-    padding: 60px 20px;
-}
-
-/* ===== CTA ===== */
-.cta {
-    background: #ffffff;
-    border-radius: 30px;
-    padding: 60px 20px;
-    text-align: center;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-/* ===== FOOTER ===== */
+/* ---------- Footer ---------- */
 footer {
-    background: #00bfff;
+    background: #001733;
+    color: #00f0ff;
     text-align: center;
-    padding: 20px;
-    color: #fff;
-    margin-top: 60px;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(0,255,255,0.2);
 }
 
-/* ===== CHATBOT ===== */
+/* ---------- Floating Chat Button ---------- */
 #chatbot-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 9999;
 }
-
 #chatbot-bubble {
+    background: linear-gradient(90deg, #00f0ff, #0ff);
+    color: #0d111f;
+    font-size: 28px;
+    border-radius: 50%;
     width: 60px;
     height: 60px;
-    background: #00bfff;
-    color: white;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 15px rgba(0,255,255,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+#chatbot-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 25px rgba(0,255,255,0.6);
 }
 
+/* Chat overlay */
 #chat-overlay {
     display: none;
     position: fixed;
     bottom: 90px;
     right: 20px;
-    width: 350px;
-    height: 500px;
+    width: 400px;
+    max-width: 90%;
+    height: 600px;
     border-radius: 15px;
+    box-shadow: 0 4px 25px rgba(0,255,255,0.6);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     z-index: 9998;
 }
 
-#chat-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .skills, .tools-container { flex-direction: column; align-items: center; }
 }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-    .cards, .info-grid, .stat-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .card, .info, .stat {
-        width: 90%;
-        max-width: 380px;
-    }
-}
-
-@media (max-width: 600px) {
-    .hero {
-        padding: 60px 15px;
-    }
-    .hero h1 {
-        font-size: 28px;
-    }
-    .hero p {
-        font-size: 15px;
-    }
-}
-
 @media (max-width: 500px) {
-    #chat-overlay {
-        width: 95%;
-        max-width: 400px;
-        height: 60%;
-        max-height: 500px;
-        bottom: 20px;
-        right: 2.5%;
-        border-radius: 15px;
-    }
-    .cta, .stats {
-        padding: 40px 15px;
-    }
+    #chat-overlay { width: 95%; height: 500px; bottom: 80px; }
+    header h1 { font-size: 24px; }
+    h2 { font-size: 26px; }
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>NextGen Coaching Institute</h1>
-    <p>A modern coaching institute dedicated to academic excellence, competitive success, and future-ready skills through expert teaching and AI-powered student support.</p>
-</div>
+<header>
+    <h1>Bilal's AI Portfolio & Tools Hub</h1>
+    <nav>
+        <a href="#skills">Skills</a>
+        <a href="#tools">AI Tools</a>
+    </nav>
+</header>
 
-<!-- ABOUT -->
-<section>
-    <h2>Who We Are</h2>
-    <p style="text-align:center; max-width:900px; margin:auto;">
-        NextGen Coaching Institute is a results-oriented educational institute committed to shaping confident, skilled, and successful students. 
-        We focus on conceptual clarity, disciplined preparation, and continuous mentorship. Our institute bridges the gap between traditional teaching 
-        and modern learning technologies to ensure every student reaches their full potential.
-    </p>
-</section>
-
-<!-- VISION & MISSION -->
-<section>
-    <h2>Our Vision & Mission</h2>
-    <div class="info-grid">
-        <div class="info">
-            <h3>🎯 Our Vision</h3>
-            <p>To become a leading coaching institute recognized for academic excellence, innovation, and producing confident students who succeed in exams and careers.</p>
+<section id="skills">
+    <h2>My Skills & Expertise</h2>
+    <div class="skills">
+        <div class="skill-card">
+            <i class="fas fa-robot"></i>
+            <h3>AI Tool Development</h3>
+            <p>Creating AI-powered applications using Streamlit.</p>
         </div>
-        <div class="info">
-            <h3>🚀 Our Mission</h3>
-            <p>Our mission is to provide high-quality education through expert faculty, structured learning plans, regular assessments, and personalized guidance.</p>
+        <div class="skill-card">
+            <i class="fas fa-plug"></i>
+            <h3>API Integration</h3>
+            <p>Integrating AI models and APIs to make apps powerful.</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-code"></i>
+            <h3>Python & ML</h3>
+            <p>Skilled in Python and machine learning techniques.</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-desktop"></i>
+            <h3>UI/UX Design</h3>
+            <p>Designing responsive and user-friendly Streamlit interfaces.</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-comments"></i>
+            <h3>Custom Chatbots</h3>
+            <p>Building intelligent chatbots trained on custom data for clients.</p>
         </div>
     </div>
 </section>
 
-<!-- COURSES -->
-<section>
-    <h2>Programs We Offer</h2>
-    <div class="cards">
-        <div class="card">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h3>IT & Programming</h3>
-            <p>Practical training in Python, Artificial Intelligence, Web Development, and modern technologies aligned with industry demand.</p>
+<section id="tools">
+    <h2>My AI Tools</h2>
+    <div class="tools-container">
+        <div class="tool-card top-tool">
+            <i class="fas fa-toolbox"></i>
+            <h2>AI Tool Suite <span style="color:#FFD700;">(Bestest!)</span></h2>
+            <p>The ultimate suite of AI-powered tools.</p>
+            <a href="https://ai-tool-suite.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-        <div class="card">
-            <i class="fa-solid fa-book-open-reader"></i>
-            <h3>Competitive Exams</h3>
-            <p>Focused preparation for government and entry-level competitive exams with practice tests, strategies, and exam-oriented guidance.</p>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-video"></i>
+            <h2>YouTube Script Generator</h2>
+            <p>Create full YouTube video scripts instantly using AI.</p>
+            <a href="https://youtube-script-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
         </div>
-        <div class="card">
-            <i class="fa-solid fa-briefcase"></i>
-            <h3>Career Development</h3>
-            <p>Career counseling, CV building, interview preparation, and mentorship to help students make confident career decisions.</p>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-robot"></i>
+            <h2>AI Chatbot</h2>
+            <p>Chat with an intelligent AI bot.</p>
+            <a href="https://online-ai-chatbot-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-file-pdf"></i>
+            <h2>Smart Document Chat</h2>
+            <p>Chat with PDFs and documents using AI-powered Q&A.</p>
+            <a href="https://smart-document-chat.streamlit.app/?embed=true" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-microphone-alt"></i>
+            <h2>Brand Voice AI</h2>
+            <p>Generate content that perfectly matches your brand’s voice.</p>
+            <a href="https://brand-voice-ai.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-pen-nib"></i>
+            <h2>AI Blog Generator</h2>
+            <p>Generate high-quality blogs instantly.</p>
+            <a href="https://ai-blog-generator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card top-tool">
+            <i class="fas fa-volume-up"></i>
+            <h2>Text to Speech</h2>
+            <p>Convert text into natural speech.</p>
+            <a href="https://text-to-speech-app-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-file-alt"></i>
+            <h2>AI Text Summarizer</h2>
+            <p>Condense long text into short summaries.</p>
+            <a href="https://ai-text-summarizer-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-image"></i>
+            <h2>AI Meme Maker</h2>
+            <p>Create funny and viral memes instantly.</p>
+            <a href="https://ai-meme-maker.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-newspaper"></i>
+            <h2>News Article Categorizer</h2>
+            <p>Categorize news into topics automatically.</p>
+            <a href="https://news-article-categorizer-tool.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-pencil-ruler"></i>
+            <h2>Logo Generator Tool</h2>
+            <p>Design professional logos instantly using AI.</p>
+            <a href="https://logo-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-comments"></i>
+            <h2>AI Interview Simulator</h2>
+            <p>Practice job interviews with AI.</p>
+            <a href="https://ai-interview-simulator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <i class="fas fa-search"></i>
+            <h2>Named Entity Recognition</h2>
+            <p>Extract names, dates, and locations from text.</p>
+            <a href="https://named-entity-recognition-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
     </div>
 </section>
 
-<!-- TEACHING METHODOLOGY -->
-<section>
-    <h2>Our Teaching Methodology</h2>
-    <div class="info-grid">
-        <div class="info">
-            <h3>📘 Concept-Based Learning</h3>
-            <p>We focus on building strong fundamentals instead of rote memorization.</p>
-        </div>
-        <div class="info">
-            <h3>📝 Regular Assessments</h3>
-            <p>Weekly tests and performance analysis to track student progress.</p>
-        </div>
-        <div class="info">
-            <h3>🤖 AI-Powered Support</h3>
-            <p>24/7 AI assistant to answer student questions and provide instant help.</p>
-        </div>
-    </div>
-</section>
-
-<!-- STATS -->
-<section class="stats">
-    <h2 style="color:white;">Our Impact</h2>
-    <div class="stat-grid">
-        <div class="stat"><h1>8+</h1><p>Years of Excellence</p></div>
-        <div class="stat"><h1>2500+</h1><p>Students Trained</p></div>
-        <div class="stat"><h1>90%</h1><p>Success Rate</p></div>
-        <div class="stat"><h1>24/7</h1><p>Student Support</p></div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-    <h2>Start Your Journey with Confidence</h2>
-    <p><strong>Click the chat icon below to talk with our AI assistant.</strong></p>
-</section>
-
-<!-- FOOTER -->
 <footer>
-    © 2025 NextGen Coaching Institute | Excellence in Education
+    &copy; 2025 Bilal. All rights reserved.
 </footer>
 
-<!-- CHATBOT -->
+<!-- Floating Chatbot -->
 <div id="chatbot-container">
     <div id="chatbot-bubble">💬</div>
 </div>
-
 <div id="chat-overlay">
-    <iframe id="chat-frame" src="https://chat-with-nextgen-coaching.streamlit.app/?embed=true"></iframe>
+    <iframe id="chat-frame" 
+        src="https://custom-chatbot-testing.streamlit.app/?embed=true" 
+        width="100%" height="100%" frameborder="0"></iframe>
 </div>
 
 <script>
 const bubble = document.getElementById('chatbot-bubble');
 const overlay = document.getElementById('chat-overlay');
-
 bubble.addEventListener('click', () => {
     overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
 });
