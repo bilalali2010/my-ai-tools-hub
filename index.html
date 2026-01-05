@@ -49,7 +49,6 @@ section {
     max-width: 1200px;
     margin: auto;
 }
-
 h2 {
     text-align: center;
     font-size: 32px;
@@ -64,7 +63,6 @@ h2 {
     justify-content: center;
     gap: 30px;
 }
-
 .skill-card, .tool-card {
     width: 270px;
     background: rgba(0,255,255,0.05);
@@ -73,30 +71,32 @@ h2 {
     padding: 25px;
     text-align: center;
     backdrop-filter: blur(10px);
-    transition: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .skill-card:hover, .tool-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 0 25px rgba(0,255,255,0.4);
 }
 
+/* ---------- Icons ---------- */
 .skill-card i, .tool-card i {
     font-size: 40px;
     margin-bottom: 15px;
     color: #00f0ff;
 }
 
-.tool-card h2 {
-    font-size: 22px;
+/* ⭐ Highlighted / Top Tools */
+.top-tool i {
+    color: #FFD700; /* Gold */
 }
-.skill-card h3 {
-    font-size: 20px;
+.top-tool:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
 }
 
-.tool-card p, .skill-card p {
-    font-size: 15px;
-}
+/* ---------- Text ---------- */
+.tool-card h2 { font-size: 22px; }
+.skill-card h3 { font-size: 20px; }
+.tool-card p, .skill-card p { font-size: 15px; }
 
 /* ---------- Buttons ---------- */
 .tool-card a {
@@ -183,94 +183,88 @@ footer {
     <h2>My AI Tools</h2>
     <div class="tools-container">
 
-        <div class="tool-card">
+        <div class="tool-card top-tool">
             <i class="fas fa-toolbox"></i>
-            <h2>AI Tool Suite</h2>
-            <p>All-in-one AI productivity suite.</p>
+            <h2>AI Tool Suite <span style="color:#FFD700;">(Bestest!)</span></h2>
+            <p>The ultimate suite of AI-powered tools.</p>
             <a href="https://ai-tool-suite.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
-        <div class="tool-card">
+        <div class="tool-card top-tool">
             <i class="fas fa-video"></i>
             <h2>YouTube Script Generator</h2>
-            <p>Instant YouTube scripts using AI.</p>
+            <p>Create YouTube scripts instantly.</p>
             <a href="https://youtube-script-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
-        <div class="tool-card">
+        <div class="tool-card top-tool">
             <i class="fas fa-robot"></i>
             <h2>AI Chatbot</h2>
-            <p>Talk with an intelligent AI assistant.</p>
+            <p>Chat with an intelligent AI bot.</p>
             <a href="https://online-ai-chatbot-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
-        <div class="tool-card">
+        <div class="tool-card top-tool">
             <i class="fas fa-file-pdf"></i>
             <h2>Smart Document Chat</h2>
             <p>Chat with PDFs & documents.</p>
             <a href="https://smart-document-chat.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
-        <div class="tool-card">
+        <div class="tool-card top-tool">
             <i class="fas fa-microphone-alt"></i>
             <h2>Brand Voice AI</h2>
             <p>Generate content in your brand voice.</p>
             <a href="https://brand-voice-ai.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
-        <div class="tool-card">
+        <div class="tool-card top-tool">
             <i class="fas fa-pen-nib"></i>
             <h2>AI Blog Generator</h2>
-            <p>Create high-quality blogs instantly.</p>
+            <p>Generate high-quality blogs instantly.</p>
             <a href="https://ai-blog-generator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
-        <div class="tool-card">
+        <div class="tool-card top-tool">
             <i class="fas fa-volume-up"></i>
             <h2>Text to Speech</h2>
-            <p>Convert text into natural voice.</p>
+            <p>Convert text into natural speech.</p>
             <a href="https://text-to-speech-app-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
         <div class="tool-card">
             <i class="fas fa-file-alt"></i>
             <h2>AI Text Summarizer</h2>
-            <p>Summarize long content instantly.</p>
             <a href="https://ai-text-summarizer-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
         <div class="tool-card">
             <i class="fas fa-image"></i>
             <h2>AI Meme Maker</h2>
-            <p>Create viral memes using AI.</p>
             <a href="https://ai-meme-maker.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
         <div class="tool-card">
             <i class="fas fa-newspaper"></i>
             <h2>News Categorizer</h2>
-            <p>Auto-categorize news articles.</p>
             <a href="https://news-article-categorizer-tool.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
         <div class="tool-card">
             <i class="fas fa-pencil-ruler"></i>
             <h2>Logo Generator</h2>
-            <p>AI-powered logo creation.</p>
             <a href="https://logo-generator-tool.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
         <div class="tool-card">
             <i class="fas fa-comments"></i>
             <h2>AI Interview Simulator</h2>
-            <p>Practice interviews with AI.</p>
             <a href="https://ai-interview-simulator-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
         <div class="tool-card">
             <i class="fas fa-search"></i>
             <h2>Named Entity Recognition</h2>
-            <p>Extract entities from text.</p>
             <a href="https://named-entity-recognition-by-bilal.streamlit.app/" target="_blank">Open Tool</a>
         </div>
 
@@ -281,5 +275,117 @@ footer {
     &copy; 2025 Bilal. All rights reserved.
 </footer>
 
+
+<!-- ===============================
+    BILAL AI CHATBOT EMBED
+================================ -->
+
+<style>
+/* Floating Button */
+#ng-chat-btn{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00bfff,#00ffd5);
+    border:none;
+    font-size:28px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,191,255,.5);
+    z-index:9998;
+}
+
+/* Chat Window (PC) */
+#ng-chat-box{
+    display:none;
+    position:fixed;
+    bottom:96px;
+    right:22px;
+    width:440px;
+    height:78vh;
+    max-height:820px;
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+    overflow:hidden;
+    z-index:9999;
+}
+
+/* Header */
+.ng-chat-header{
+    height:58px;
+    background:#0f172a;
+    color:#fff;
+    padding:0 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:Arial, sans-serif;
+}
+
+.ng-chat-header span{
+    font-weight:600;
+}
+
+.ng-chat-header button{
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* Iframe */
+#ng-chat-frame{
+    width:100%;
+    height:calc(100% - 58px);
+    border:none;
+}
+
+/* Mobile Fullscreen */
+@media(max-width:768px){
+    #ng-chat-box{
+        inset:0;
+        width:100%;
+        height:100%;
+        border-radius:0;
+        max-height:none;
+    }
+}
+</style>
+
+<!-- Chat Button -->
+<button id="ng-chat-btn">💬</button>
+
+<!-- Chat Box -->
+<div id="ng-chat-box">
+    <div class="ng-chat-header">
+        <span>BILAL AI Assistant</span>
+        <button onclick="ngToggleChat()">✖</button>
+    </div>
+
+    <iframe
+        id="ng-chat-frame"
+        src="https://chat-with-bilal.up.railway.app/?embed=true">
+    </iframe>
+</div>
+
+<script>
+function ngToggleChat(){
+    const box = document.getElementById("ng-chat-box");
+    box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+document.getElementById("ng-chat-btn").onclick = ngToggleChat;
+</script>
+
+<!-- ===============================
+     END CHATBOT EMBED
+================================ -->
+
+
+    
 </body>
 </html>
